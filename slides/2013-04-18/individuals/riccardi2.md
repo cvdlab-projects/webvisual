@@ -18,7 +18,7 @@
  # WV-LAR
 
  ##Functions:
- - Selection console Fixedv Lar-Demo or JavaScript console
+ - Selection console Fixed Lar-Demo or JavaScript console
  - Open a file JavsaScript from local folder
  - Go To the next step in file
  - Evaluation content step
