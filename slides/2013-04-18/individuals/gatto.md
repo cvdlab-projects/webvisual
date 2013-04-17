@@ -6,7 +6,9 @@
 
 ## Individual task
 
-* Assessment and delivery of UI templates (Javascript + HTML5 + CSS) 
+
+
+### Assessment and delivery of UI templates (Javascript + HTML5 + CSS) 
 
         for Web-LAR project
 
@@ -15,8 +17,11 @@
 ##How to...
 
 * jQuery library
+
 * LAR-DEMO app
+
         PLASM grafic engine
+
 * Link to Web-Mol app
 
 ---
