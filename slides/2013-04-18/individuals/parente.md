@@ -14,6 +14,7 @@
 #How to...
 ###- Backbone.js library
 ###- JQuery.js library
+###- compatibility with all browsers
 ###- implementation of javascript functions to make functional the homepage how : 
 ###  sliding main menù, animations and functions for the buttons
 
