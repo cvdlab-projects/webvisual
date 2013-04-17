@@ -4,17 +4,17 @@
 - Matteo Riccardi
 
 - - -
-
 # Individual task:
 ## Matteo Riccardi
 ### Implementation of a textual U-I JAVASCRIPT console:
 - Parser  Javascript(along with Luigi Cristiano)
 - CSS
-- Functions and Doc
+- Functions and Documentation for WebLar
+- Help function
 
 - - -
 
-# WV-WebLar
+# WV-WebLAR
 
 ## Functions:
 - Selection console fixed-lar demo or javascript console
