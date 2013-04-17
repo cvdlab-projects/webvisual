@@ -1,31 +1,24 @@
 # Web-Visual Subgroup division
-## Implementation of a textual U-I in a console 
+## Implementation of a textual U-I in a console
+
 - Luigi Cristiano
 - Matteo Riccardi
 
-- - -
-# Individual task:
-## Luigi Cristiano
-### Implementation of a textual U-I JAVASCRIPT console:
-- Undo Function
-- Functions and Documentation for WebIndex and WebDicom
-- Help function
+- - - 
 
-- - -
+#Indivual task:
+###Implementation of textual U-I JavaScript console:
+- Parser JavaScript
+- CSS
+- Functions and Documentation for Web-Lar
+- Help Function
 
-# WV-WebIndex
+ - - -
 
-## Functions:
-- Open JSON from MONGO-DB
-- Open JSON from local folder
-- Open JSON from tree-view using the ID 
-- Navigation function (?)
+ #WV-LAR
 
-- - -
-
-# WV-WebDicom
-
-## Functions:
-- Loading DICOM collection
-- Slide the DICOMS
-- 3D image reconstruction from DICOM collection
+ ##Functions:
+ - Selection console fixed-lar demo or JavaScript console
+ - Open a file JavsaScript from local folder
+ - Go To the next step in file
+ - Evaluation content step
