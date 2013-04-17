@@ -1,4 +1,5 @@
 # Web-Visual Subgroup division
+
 ## Implementation of a textual U-I in a console
 
 - Luigi Cristiano
@@ -7,6 +8,7 @@
 - - - 
 
 #Indivual task:
+
 ###Implementation of textual U-I JavaScript console:
 - Parser JavaScript
 - CSS
@@ -15,7 +17,7 @@
 
 
 
- - - -
+- - -
 
  #WV-LAR
 
