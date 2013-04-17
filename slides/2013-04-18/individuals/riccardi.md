@@ -7,7 +7,6 @@
 # Individual task:
 ## Matteo Riccardi
 ### Implementation of a textual U-I JAVASCRIPT console:
-### Implementation of a textual U-I JAVASCRIPT console:
 - Parser  Javascript(along with Luigi Cristiano)
 - CSS
 - Functions and Documentation for WebLar
