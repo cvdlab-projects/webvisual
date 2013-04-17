@@ -1,12 +1,11 @@
 # Web-Visual Subgroup division
-
 ## Implementation of a textual U-I in a console 
 - Luigi Cristiano
 - Matteo Riccardi
 
 - - -
 # Individual task:
-## Riccardi Matteo
+## Matteo Riccardi
 ### Implementation of a textual U-I JAVASCRIPT console:
 - Parser  Javascript(along with Luigi Cristiano)
 - CSS
