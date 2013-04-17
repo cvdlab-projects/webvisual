@@ -1,13 +1,15 @@
-[Gianluca Parente](http://apily.io/slidify?md=raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/parente.md)
+# Individual Slides
 
-[Giorgio Cerrito](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/cerrito.md)
+*[Gianluca Parente](http://apily.io/slidify?md=raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/parente.md)
 
-[Marco Barbieri](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/barbieri.md)
+*[Giorgio Cerrito](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/cerrito.md)
 
-[Eleonora Cappelli](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/cappelli.md)
+*[Marco Barbieri](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/barbieri.md)
 
-[Antonello Gatto](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/gatto.md)
+*[Eleonora Cappelli](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/cappelli.md)
 
-[Luigi Cristiano](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/cristiano.md)
+*[Antonello Gatto](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/gatto.md)
 
-[Matteo Riccardi](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/riccardi.md)
+*[Luigi Cristiano](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/cristiano.md)
+
+*[Matteo Riccardi](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/riccardi.md)
