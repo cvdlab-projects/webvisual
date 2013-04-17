@@ -28,15 +28,15 @@
 
 ##Function buttons:
 
-1. Open button 
+1. Open button :
 
         chooses a local file (divided in steps) to be evaluated;
 
-2. Eval button 
+2. Eval button :
 
         evaluates the current step;
 
-3. Next button
+3. Next button :
 
         passes to the next step.
 
