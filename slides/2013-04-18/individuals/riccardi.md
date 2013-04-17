@@ -22,4 +22,3 @@
 - Open a file JavaScript from local folder
 - Go To the next step in n file
 - Evaluation content step
-
