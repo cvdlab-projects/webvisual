@@ -3,7 +3,7 @@
 - Luigi Cristiano
 - Matteo Riccardi
 
-- - -
+- - - 
 
 # Individual task:
 ## Matteo Riccardi
@@ -13,7 +13,7 @@
 - Functions and Documentation for WebLar
 - Help function
 
-- - -
+- - - 
 
 # WV-WebLar
 
