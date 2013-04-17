@@ -1,8 +1,9 @@
 # Web-Visual Subgroup division
 ## Implementation of a textual U-I in a console 
 - Luigi Cristiano
-- - Matteo Riccardi
+- Matteo Riccardi
 
+- - - 
 
 ### Individual task:
 ## Matteo Riccardi
