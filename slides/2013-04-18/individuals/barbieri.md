@@ -5,7 +5,7 @@
 
 ## Individual task
 ## Marco Barbieri
-### Assessment and delivery of UI templates for the Web-Index project 
+### Assessment and delivery of UI template for the Web-Index project 
 ### 
 
 - - -
@@ -25,8 +25,5 @@
 
 - - -
 ##additional objectives...
-###- split the html page in two part to show on one side the plasm.js and on the other 
-###  one the image of the tree view of the cluster point.
-
-###- open the json file from local or from MongoDB and so another button to realize these
-###  tasks
+###- split the html page in two canvases: on one side plasm.js enviroment and on the other one canvas to show the image from WEB-INDEX  
+###- open the json file from local or from MongoDB and so others buttons to realize these tasks
