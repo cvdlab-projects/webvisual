@@ -16,8 +16,8 @@
 ###- plasm.js library
 ###- HTML5 + CSS
 ###- Javascript function to show the 3D image 
-###  recostruction from Web-DICOM
-###  through some buttons 
+###    recostruction from Web-DICOM
+###    through some buttons 
 - - -
 
 ##additional objectives...
