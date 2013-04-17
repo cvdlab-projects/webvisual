@@ -27,6 +27,6 @@
 ##additional objectives...
 ###- split the html page in two part to show on one side the plasm.js and on the other 
 ###  one the image of the tree view of the cluster point.
-###
+
 ###- open the json file from local or from MongoDB and so another button to realize these
 ###  tasks
