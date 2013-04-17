@@ -3,22 +3,29 @@
 - Luigi Cristiano
 - Matteo Riccardi
 
-- - - 
-
-### Individual task:
-## Matteo Riccardi
+- - -
+# Individual task:
+## Luigi Cristiano
 ### Implementation of a textual U-I JAVASCRIPT console:
-- Parser  Javascript
-- CSS
-- Functions and Documentation for WebLar
+- Undo Function
+- Functions and Documentation for WebIndex and WebDicom
 - Help function
 
-- - - 
+- - -
 
-# WV-WebLar
+# WV-WebIndex
 
 ## Functions:
-- Selection console fixed-lar demo or javascript console
-- Open a file JavaScript from local folder
-- Go To the next step in n file
-- Evaluation content step
+- Open JSON from MONGO-DB
+- Open JSON from local folder
+- Open JSON from tree-view using the ID 
+- Navigation function (?)
+
+- - -
+
+# WV-WebDicom
+
+## Functions:
+- Loading DICOM collection
+- Slide the DICOMS
+- 3D image reconstruction from DICOM collection
