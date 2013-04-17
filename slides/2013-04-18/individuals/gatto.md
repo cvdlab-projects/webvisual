@@ -6,7 +6,7 @@
 
 ## Individual task
 
-* Delivery of UI templates (Javascript + HTML5 + CSS) 
+* Assessment and delivery of UI templates (Javascript + HTML5 + CSS) 
 
         for Web-LAR project
 
@@ -19,6 +19,21 @@
         PLASM grafic engine
 * Link to Web-Mol app
 
+---
+
+##Function buttons:
+
+1. Open button 
+
+        chooses a local file (divided in steps) to be evaluated;
+
+2. Eval button 
+
+        evaluates the current step;
+
+3. Next button
+
+        passes to the next step.
 
 
 
