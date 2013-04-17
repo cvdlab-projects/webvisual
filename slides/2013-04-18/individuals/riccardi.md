@@ -3,9 +3,8 @@
 - Luigi Cristiano
 - - Matteo Riccardi
 
-- - - 
 
-# Individual task:
+### Individual task:
 ## Matteo Riccardi
 ### Implementation of a textual U-I JAVASCRIPT console:
 - Parser  Javascript
