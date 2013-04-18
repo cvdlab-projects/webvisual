@@ -12,4 +12,4 @@
 
 -[Luigi Cristiano](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/cristiano.md)
 
--[Matteo Riccardi](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/riccardi.md)
+-[Matteo Riccardi](http://apily.io/slidify?md=https://raw.github.com/cvdlab-bio/webvisual/master/slides/2013-04-18/individuals/riccardi2.md)
