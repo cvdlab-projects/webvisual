@@ -18,7 +18,7 @@
 ###- Javascript function to show the 3D image recostruction from Web-DICOM through some buttons 
 - - -
 
-##additional objectives...
+##Functions
 
 ###- split the html page in two canvas to show: 
 ###   1) the loading of all the original images and navigation of images through some buttons (prev,next..) 
