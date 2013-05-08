@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>WebVisual</title>
+
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>	
+	
+</head>
+
+<body id="editor">
+
+	<!-- WEB-LAR-->
+
+	<section id="project2" >
+		<link href="styles/myCss/bootstrap2.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="styles/myCss/custom2.css" rel="stylesheet" type="text/css" media="all" />
+
+		<!-- header -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<a class="brand" href="#">Web LAR</a>
+				<ul class="nav">
+					<li class="active"><a href="bihomed.html">Home</a></li>
+					<li><a id="link_about" href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- fine header -->
+
+		<!-- content -->
+
+		<div id="plasm" class="container">
+			<div id="div_plasm"></div>
+			<div id="div_framerate"></div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="control-group">
+				<input id="input_file" type="file">
+				<a id="example_01" href="examples/example_01.js" download>example 01</a>
+				<span>-</span>
+				<a id="example_02" href="examples/example_02.js" download>example 02</a>
+				<span>-</span>
+				<a id="example_03" href="examples/example_03.js" download>example 03</a>
+				<span>-</span>
+				<a id="example_04" href="examples/example_04.js" download>example 04</a>
+				<span>-</span>
+				<a id="example_05" href="examples/example_05.js" download>example 05</a>
+				<span>-</span>
+				<a id="example_06" href="examples/example_06.js" download>example 06</a>
+			</div>
+			<div class="control-group">
+				<textarea id="textarea_code"></textarea>
+			</div>
+			<div class="control-group">
+				<button id="button_next" class="btn">next</button>
+				<button id="button_eval" class="btn">eval</button>
+			</div>
+
+		</div>
+
+		<script src="support/lar/numeric.js"></script>
+		<script src="support/lar/three.js"></script>
+		<script src="support/lar/three-detector.js"></script>
+		<script src="support/lar/three-frame.js"></script>
+		<script src="support/lar/three-stats.js"></script>
+		<script src="support/lar/three-trackball.js"></script>
+		<script src="support/lar/simplexn.js"></script>
+		<script src="support/lar/f.js"></script>
+
+		<script src="support/lar/underscore.js"></script>
+		<script src="support/lar/stick.js"></script>
+
+		<script src="support/lar/bootstrap.js"></script>
+
+		<script src="support/lar/emitter.js"></script>
+		<script src="support/lar/reader.js"></script>
+		<script src="support/lar/file.js"></script>
+
+		<script src="lib/plasm.js"></script>
+		<script src="lib/plasm-fun.js"></script>
+		<script src="lib/lar.js"></script>
+
+		<script src="index.js"></script>
+
+		<!-- chiudo il content -->
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="navbar">
+				<ul class="nav">
+					<li><a href="Web-dicom">Web-Dicom</a></li>
+					<li><a href="Web-index">Web-Index</a></li>
+					<li><a href="http://cvdlab-bio.github.io/webmol/">Web-Mol</a></li>
+					<li><a href="bihomed.html">Back</a></li>
+				</ul>
+			</div>
+
+			<div id="footer" class="container"></div>
+		</footer>
+	</section>
+
+	<footer>
+	</footer>
+
+
+</body>
+</html>
