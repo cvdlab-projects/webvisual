@@ -9,13 +9,15 @@ Web Visual Interface project
 * Giorgio Cerrito
 * Luigi Cristiano
 * Marco Barbieri
+* Gianluca Parente
 * Matteo Riccardi
+
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2013 Antonello Gatto, Eleonora Cappelli, Giorgio Cerrito, Luigi Cristiano, Marco Barbieri, Matteo Riccardi
+Copyright (c) 2013 Antonello Gatto, Eleonora Cappelli, Giorgio Cerrito, Luigi Cristiano, Marco Barbieri, Matteo Riccardi, Gianluca Parente
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
