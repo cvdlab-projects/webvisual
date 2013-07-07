@@ -72,7 +72,6 @@
 	<link rel="stylesheet" href="styles/console/codemirror.css">
 	<link rel="stylesheet" href="styles/console/console.css">
 	<link rel="stylesheet" href="styles/console/show-hint.css">
-    <script type="text/javascript" src="js/jsDicom/webDicom-env.js"></script>
 
 	<!--fine console-->
 
@@ -111,57 +110,56 @@
 
 	</script>
 
-
-
-
-	<!-- header -->
-
-	<div class="navbar">
-		<div class="navbar-inner">
-			<a class="brand" href="#">Web Dicom</a>
-			<ul class="nav">
-				<li class="active"><a href="index.html"><b>Home</b></a></li>
-				<li><a id="webdicom-link-about" href="#"><b>About</b></a></li>
-				<li><a id="webdicom-link-contact" href="#"><b>Contact</b></a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- fine header -->
-
-	<!-- inizio context -->
-	<div class="container-fluid">
-		<div class="row-fluid">
+	    <script type="text/javascript" src="js/jsDicom/webDicom-env.js"></script>
 
 <div id="webdicom-container-about-wrapper">
-        <div id="webdicom-container-about" class="webdicom-container">
+        <div id="webdicom-container-about" class="webdicom-container"  style="margin-top:0.5%">
             <div>
-                <div id="webdicom-logo"><span>Web-Index</span></div>
+                <div id="webdicom-logo"><span>Web-Dicom</span></div>
             </div>
             <div id="webdicom-icon-close" class="icon-close"></div>
             <div id="webdicom-copyright">
-                <p> Web-index is a web application created by a group of student of University Roma Tre</p>
-                <p> Student Group :</p><ul type="disc"><li>Andrea Barbadoro</li><li>Andrea Patrizia</li><li>Francesco Maglia</li>
-                <li>Ilario Maiolo</li><li>Matteo Cannaviccio</li><li>Sara Vagnarelli</li></ul></p></br>
-                <p> Project: </p><ul type="disc"><li>Analysis of major approaches to spatial indexing of large point data-sets</li>
-                    <li>JSON paging of large geometric datasets using MongoDB</li>
-                    <li>implementation of <a href="http://en.wikipedia.org/wiki/Hilbert_curve">Hilbert</a> and <a href="http://en.wikipedia.org/wiki/Z-order_(curve" >Lebesgue curve or z-order</a> curve and indices</li>
-                    <li>Strassen multiplication of matrices with Z-order</li></ul></p>
+                <p> Web-dicom (edge detection&Dicom viewer) is a web application created by a group of student of University Roma Tre</p>
+                <p> Student Group :</p><ul type="disc"><li>Roberta Romano</li><li>Valerio Cestarelli</li></ul></p></br>
+                
             </div>
         </div>
     </div>
 
     <div id="webdicom-container-about-wrapper">
-        <div id="webdicom-container-contact" class="webdicom-container">
+        <div id="webdicom-container-contact" class="webdicom-container"  style="margin-top:0.5%">
             <div>
-                <div id="webdicom-logo"><span>Web-Index contact</span></div>
+                <div id="webdicom-logo"><span>Web-Dicom contact</span></div>
             </div>
+
             <div id="webdicom-icon-contact-close" class="icon-contact-close"></div>
             <div id="webdicom-copyright">
-                <p> Web page designer:</p></br><p>Marco Barbieri email : marco90barbieri@gmail.com</p></br>
+                <p> Web page designer:</p></br><p>Eleonora Cappelli email : elemarzo90@hotmail.it</p></br>
                 <p> Function developers:</p></br><p> Altre email</p></br>
             </div>
         </div>
     </div>
+
+	<!-- header -->
+<div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Web Dicom</a>
+         
+            <ul class="nav" >
+                <li style="font-size:17px;" class="active"><a href="index.html"><b>Home</b></a></li>
+                <li style="font-size:17px;"><a id="webdicom-link-about" href="#"><b>About</b></a></li>
+                <li style="font-size:17px;"><a id="webdicom-link-contact" href="#"><b>Contact</b></a></li>
+            </ul>
+        
+        </div>
+    </div>
+	<!-- fine header -->
+
+	<!-- inizio context -->
+	<div style="position:relative" class="container-fluid">
+		<div class="row-fluid">
+
+
 			<div class="span4">
 				<br>
 
@@ -181,17 +179,28 @@
 				</div>
 
 			</div>
+<style>
+h3
+{
+font-style: oblique;
+font-family:Arial;
+font-size:large;
+color:#2F2F2F;
+text-shadow:2px 2px #6495ED;}
+
+
+</style>
 
 			<br>
 			<div class="row-fluid">
 				<div class="span6">
 					<blockquote >
-						<p ><strong>Original Image</strong></p>
+						<p ><h3>Original Image</h3></p>
 					</blockquote>
 					<p></div>
 						<div class="span6">
 							<blockquote>
-								<p ><strong>Grayscale filter</strong></p>
+								<p ><h3>Grayscale filter</h3></p>
 							</blockquote>
 							<p></div>
 							</div>
@@ -223,7 +232,7 @@
 							<div class="row-fluid">
 								<br>
 								<blockquote>
-									<p><strong>Scroll to show all images</strong></p>
+									<p>Scroll to show all images</p>
 								</blockquote>
 
 
@@ -252,8 +261,8 @@
 							<div class="row-fluid">
 								<div class="span5">
 
-									<blockquote style="display: inline;">
-										<p style="display: inherit;"><strong>Thresholding Segmentation</strong></p>
+									<blockquote >
+										<p><h3>Thresholding Segmentation</h3></p>
 									</blockquote>
 									
 
@@ -271,8 +280,8 @@
 <div class="span1"></div>
 
 										<div class="span5">
-											<blockquote style="display: inline;">
-												<p style="display: inherit;"><strong>Block Decomposition</strong></p>
+											<blockquote >
+												<p><h3>Block Decomposition</h3></p>
 											</blockquote>
 
 											<p>
@@ -321,8 +330,8 @@
 
 											</script>
 											<!-- canvas plasm -->
-											<blockquote style="display: inline;">
-												<p style="display: inherit;"><strong>3D Model</strong></p>
+											<blockquote>
+												<p><h3>3D Model</h3></p>
 											</blockquote>
 											<p class="text-center"><button class="btn btn-large" onClick="clicked3D()">Render 3D Model</button></p>
 
@@ -360,42 +369,62 @@
 										<p class="text-center">Copyright Eleonora Cappelli </p>
 
 										<!-- footer -->
-										<footer class="footer">
-											<div style="float:left">
-												<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();" ><label id="label-console" for="" style="display:inline;font-size:1.3em;color:#FFF;font-variant: small-caps"></label>
-											</div>
-											<div id="menu">
+    <footer style="position:absolute;width:100%" class="footer">
+        <!-- fine context -->
+<div style="float:left">
+	<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();" >
+</div>											<div id="menu">
 												<ul class="nav">
-													<li><a href="Web-lar.html">Web-LAR</a></li>
+													<li><a href="Web-lar.html">Web-Lar</a></li>
 													<li><a href="Web-index.html">Web-Index</a></li>
 													<li><a href="Web-dicom.html">Back</a></li>
 
 												</ul>
 											</div>
-											<div id="consl" style="display:none; float: left;">  
-												<form name="form" id="form"><textarea id="code" name="code" >
-													//Write Here
-												</textarea></form>
+<div id="consl" style="display:none">  
+	<form><textarea id="code" name="code">
+		//Write Here
+	</textarea></form>
 
-												<input id="exec" type="button" value="Exec" onclick="exec();"/>
-												<input id="coffeeScriptButton" type="button" value="CoffeeScript" onclick="coffeeMode();"/>
-												<input id="javaScriptButton" type="button" value="JavaScript" style="display:none" onclick="javascriptMode();">
-													  <input id="clear" type="button" value="Clear" onclick="cl()"/>
-												<input id="verify" type="button" value="Verify" onclick="test();"/>
-											</div>
+	<input id="exec" type="button" value="Exec" onclick="exec();"/>
+	<input id="coffeeScriptButton" type="button" value="CoffeeScript" onclick="coffeeMode();"/>
+	<input id="javaScriptButton" type="button" value="JavaScript" style="display:none" onclick="javascriptMode();">
+
+ 	<input id="verify" type="button" value="ModeChecker" onclick="test();"/>
+</div>
 
 
+ 
+<script>
+/*Testing var*/
+var csb = document.getElementById("coffeeScriptButton");
+var jsb = document.getElementById("javaScriptButton");
 
-											<script>
-											/*Testing var*/
-											var csb = document.getElementById("coffeeScriptButton");
-											var jsb = document.getElementById("javaScriptButton");
+/*Loading CodeMirror on existing textArea*/
 
-											/*Loading CodeMirror on existing textArea*/
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+	mode: "javascript",
+	lineNumbers: true,
+                extraKeys: {"Cmd-Space": "autocomplete"},   //extrakey for autocomplete
+                extraKeys: {"Ctrl-Space": "autocomplete"},
+                tabMode: "indent"                           
+            });
 
-											var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-												mode: "javascript",
-												lineNumbers: true,
+</script>
+
+        <div id="footer" class="container"></div>
+    </footer>
+
+									</body>
+									<!-- dicom -->
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/html5slider.js"></script>
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/mosaicImage.js"></script>
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/segmentation.js"></script>
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/imagesLoader.js"></script>
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/3D.js"></script>
+
+									</html>
+						lineNumbers: true,
                 extraKeys: {"Cmd-Space": "autocomplete"},   //extrakey for autocomplete
                 tabMode: "indent"                           
               });

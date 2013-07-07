@@ -110,14 +110,23 @@ document.getElementById("consl").style.top="100px";
         var el = document.getElementById("consl");
         var body = document.getElementById("webindex");
         var btn = document.getElementById("showConsole");
+        var dicom  = document.getElementById("webdicom")
+
 
         if(body !== null && document.getElementById("console-index").style.position == 'fixed'){
         document.getElementById("console-index").style.position = 'relative';
+      }
+      if (dicom !== null && document.getElementsByTagName("footer")[0].style.position == 'fixed')
+        {
+       document.getElementsByTagName("footer")[0].style.position = 'relative';
       }
 
         if (el.style.display !== 'none') {
             if(body !==null){
             document.getElementById("console-index").style.position= 'fixed';
+        }
+             if(dicom !==null){
+           document.getElementsByTagName("footer")[0].style.position = 'fixed';
         }
             el.style.display = 'none';
             var label = document.getElementById("label-console");
@@ -142,7 +151,6 @@ document.getElementById("consl").style.top="100px";
 
         var el = document.getElementById("consl")
         var body = document.getElementById("webindex")
-        
         var  tab=document.getElementById("tab")
        
 

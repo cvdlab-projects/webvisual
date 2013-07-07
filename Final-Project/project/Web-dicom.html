@@ -169,44 +169,44 @@
         //webGLStart();
     });
 
+
+
 </script>
 <link href="styles/web-dicom/cssDicomPerValerio.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/jsDicom/myJS/bootstrap.js"></script>
 
 
 </head>
-<body>
+<body id="webdicom">
 
 
 
     <div id="contenitore" style="position:relative">
     
      <div id="webdicom-container-about-wrapper">
-        <div id="webdicom-container-about" class="webdicom-container">
+        <div id="webdicom-container-about" class="webdicom-container"  style="margin-top:0.5%">
             <div>
                 <div id="webdicom-logo"><span>Web-Index</span></div>
             </div>
             <div id="webdicom-icon-close" class="icon-close"></div>
             <div id="webdicom-copyright">
-                <p> Web-index is a web application created by a group of student of University Roma Tre</p>
-                <p> Student Group :</p><ul type="disc"><li>Andrea Barbadoro</li><li>Andrea Patrizia</li><li>Francesco Maglia</li>
-                <li>Ilario Maiolo</li><li>Matteo Cannaviccio</li><li>Sara Vagnarelli</li></ul></p></br>
-                <p> Project: </p><ul type="disc"><li>Analysis of major approaches to spatial indexing of large point data-sets</li>
-                    <li>JSON paging of large geometric datasets using MongoDB</li>
-                    <li>implementation of <a href="http://en.wikipedia.org/wiki/Hilbert_curve">Hilbert</a> and <a href="http://en.wikipedia.org/wiki/Z-order_(curve" >Lebesgue curve or z-order</a> curve and indices</li>
-                    <li>Strassen multiplication of matrices with Z-order</li></ul></p>
+                <p> Web-dicom (edge detection&Dicom viewer) is a web application created by a group of student of University Roma Tre</p>
+                <p> Student Group :</p><ul type="disc"><li>Giovanni Pace</li><li>Andrea Farruggio</li><li>Serena Sforza</li>
+                <li>Fabio Matromatteo</li></ul></p></br>
+                
             </div>
         </div>
     </div>
 
     <div id="webdicom-container-about-wrapper">
-        <div id="webdicom-container-contact" class="webdicom-container">
+        <div id="webdicom-container-contact" class="webdicom-container"  style="margin-top:0.5%">
             <div>
-                <div id="webdicom-logo"><span>Web-Index contact</span></div>
+                <div id="webdicom-logo"><span>Web-Dicom contact</span></div>
             </div>
+
             <div id="webdicom-icon-contact-close" class="icon-contact-close"></div>
             <div id="webdicom-copyright">
-                <p> Web page designer:</p></br><p>Marco Barbieri email : marco90barbieri@gmail.com</p></br>
+                <p> Web page designer:</p></br><p>Eleonora Cappelli email : elemarzo90@hotmail.it</p></br>
                 <p> Function developers:</p></br><p> Altre email</p></br>
             </div>
         </div>
@@ -242,27 +242,22 @@
 
          <!-- fine modal -->
 
-
+<div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Web Dicom</a>
+         
+            <ul class="nav" >
+                <li style="font-size:17px;"><a href="Web-dicom1.html">Image-Decomposition</a></li>
+                <li style="font-size:17px;" class="active"><a href="index.html"><b>Home</b></a></li>
+                <li style="font-size:17px;"><a id="webdicom-link-about" href="#"><b>About</b></a></li>
+                <li style="font-size:17px;"><a id="webdicom-link-contact" href="#"><b>Contact</b></a></li>
+            </ul>
+        
+        </div>
+    </div>
 
          <!-- header web-lar -->
-         <div id="header-wrapper">
-            <div id="header">
-                <div id="logo">
-                    <h1><a>Web - Dicom</a></h1>
-                </div>
-                <div id="menu">
-                    <ul>                <li><a href="Web-dicom1.html">Image-Decomposition</a></li>
-
-
-                        <li><a href="index.html?#home"  title="home">Home</a></li>
-                        <li><a id="weblar-link-about" href="#">About</a></li>
-                        <li><a id="weblar-link-contact" href="#">Contact</a></li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-
+        
         <!-- fine header -->
 
 
@@ -362,7 +357,7 @@
                     </div>
 
                     <script type="text/javascript">
-	//Utility functions
+    //Utility functions
     function showDataURL(){
         var canvas_1 = document.getElementById('maincanvas');
         var context_1 = canvas_1.getContext('2d'); 
@@ -396,9 +391,9 @@
            var canvas = document.getElementById('myCanvas_1');
            var context = canvas.getContext('2d');
 
-					// load image from data url
-					var imageObj = new Image();
-					imageObj.onload = function() {
+                    // load image from data url
+                    var imageObj = new Image();
+                    imageObj.onload = function() {
                      context.drawImage(this, 0, 0);
                  };
 
@@ -409,7 +404,7 @@
              var url = showDataURL();
              postwith('/segmenter/post.php',url);
 
-         });	
+         });    
 
  $("#segmentation").click(function () {
     $("#maincanvas").fadeOut();
@@ -420,9 +415,9 @@
            var canvas = document.getElementById('myCanvas_1');
            var context = canvas.getContext('2d');
 
-					// load image from data url
-					var imageObj = new Image();
-					imageObj.onload = function() {
+                    // load image from data url
+                    var imageObj = new Image();
+                    imageObj.onload = function() {
                      context.drawImage(this, 0, 0);
                  };
 
@@ -443,9 +438,9 @@
            var canvas = document.getElementById('myCanvas_1');
            var context = canvas.getContext('2d');
 
-					// load image from data url
-					var imageObj = new Image();
-					imageObj.onload = function() {
+                    // load image from data url
+                    var imageObj = new Image();
+                    imageObj.onload = function() {
                      context.drawImage(this, 0, 0);
                  };
 
@@ -554,6 +549,8 @@
 
 
         <script>
+
+
         /*Testing var*/
         var csb = document.getElementById("coffeeScriptButton");
         var jsb = document.getElementById("javaScriptButton");
@@ -563,6 +560,24 @@
         var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
             mode: "javascript",
             lineNumbers: true,
+                extraKeys: {"Cmd-Space": "autocomplete"},   //extrakey for autocomplete
+                extraKeys: {"Ctrl-Space": "autocomplete"},
+                tabMode: "indent"                           
+            });
+
+        </script>
+
+        <div id="footer" class="container"></div>
+    </footer>
+
+
+</body>
+</html>
+
+
+
+
+Numbers: true,
                 extraKeys: {"Cmd-Space": "autocomplete"},   //extrakey for autocomplete
                 extraKeys: {"Ctrl-Space": "autocomplete"},
                 tabMode: "indent"                           

@@ -6232,5 +6232,30 @@ a.badge:focus {
 }
 #webdicom-copyright {
   margin-top: 20px;
+  font-size: 15px;
+}
+#webdicom-logo{
+ 
+  font-size: 15px;
 }
 
+
+#weblar-icon-contact-close {
+  position: absolute;
+  background-size: 100%;
+  top: 10px;
+  right: 10px;
+
+}
+
+#weblar-icon-contact-close:hover {
+  position: absolute;
+  background-size: 100%;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  opacity: .2;
+}
+#weblar-copyright {
+  margin-top: 20px;
+}
