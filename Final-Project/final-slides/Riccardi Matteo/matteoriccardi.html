@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>WebVisual - Matteo Riccardi</title>
+    <script src="http://gnab.github.io/remark/downloads/remark-0.4.6.min.js" type="text/javascript">
+      {"highlightLanguage": "javascript"}
+    </script>
+    <style type="text/css" media="screen">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+      h1 { font-size: 3.5em; }
+      h2 { font-size: 3em; }
+      h3 { font-size: 1.6em; }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      pre {
+        border-left: 0.4em solid #d7d7d7;
+        padding: 1em !important;
+      }
+      code {
+        background: transparent !important;
+      }
+      a {
+        color: #F92672;
+        text-decoration: none;
+      }
+      .task {
+        float: right;
+        font-size: 0.9em;
+        padding-top: 0.6em;
+      }
+      .task a {
+        color: #080;
+        text-decoration: none;
+      }
+      .right {
+        float: right;
+        margin-left: 1em;
+      }
+      .pushdown {
+        margin-top: 12em;
+      }
+    </style>
+  </head>
+  <body>
+    <pre id="source">
+
+class: center, middle, inverse
+
+#<h1> Web-Visual   <FONT SIZE=6>(Console)</FONT></h1>
+
+<br>
+##MATTEO RICCARDI
+<br>
+Matricola: 465553
+
+Roma Tre
+
+&nbsp&nbsp&nbsp&nbspInformatica Biomedica 2012/2013&nbsp&nbsp&nbsp&nbsp
+<br><br>
+<h6>prof.&nbsp&nbsp&nbsp&nbspA. Paoluzzi &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp M. Ceccanti</h6>
+
+---
+class: left, middle
+# Individual Task 
+
+1. [Implementation of a textual U-I Javascript/Coffeescript console](#3)
+
+2. [Execution of the Console](#5)
+
+3. [Mode changer java/coffee](#7)
+
+4. [Console's Style ](#10)
+
+5. [Autocompletion Hints](#13)
+
+6. [Clear ](#15)
+
+7. [ModeChecker](#17)
+
+
+
+
+---
+
+class: center, middle, inverse
+
+# 1. Implementation of a textual U-I Javascript/Coffeescript console
+---
+
+template: default
+layout: true
+class: middle
+
+### 1. Implementation of a textual U-I Javascript/Coffeescript console
+
+---
+# Instruments:
+* [CodeMirror API](http://codemirror.net/)
+* [Javascript](http://www.w3schools.com/js/)&nbsp&nbsp/&nbsp&nbsp[Jquery libraries](http://jquery.com/)
+
+### First attempt 
+
+  * Use a existing javascript console and do a reverse engineering &nbsp[JCubic](http://terminal.jcubic.pl/)
+
+Too much work. All the code was minified.
+
+
+### Second attempt (thanks to  E.Marino and F.Spini)
+
+  * "Use the [CodeMirror API](http://codemirror.net/doc/manual.html#api)!"
+
+
+    CodeMirror(document.body);
+
+
+    CodeMirror.fromTextArea(document.getElementById("code"), {
+                lineNumbers: true,
+                tabMode: "indent"                           
+    });
+
+
+---
+
+layout: false
+class: center, middle, inverse
+
+# 2. Execution of the Console
+---
+
+template: default
+layout: true
+class: middle
+
+### 2. Execution of the Console
+---
+
+  
+    function exec() {
+       
+            var code = editor.getValue();   //return the code in the console
+            
+            //Check the current mode          
+            if(editor.getOption("mode") === "coffeescript") {
+                try{
+                  //Compile the code using coffee-script.js
+                  var js = CoffeeScript.compile(code)  
+                  var f = new Function(js);  //set the funtion
+                  f();   //execute the code
+                  cl(); //call function delete console
+                }catch(err){
+                  var txt="There was an error on this page.\n";
+                    txt+="Error description:   " + err.message + "\n";
+                    txt+="Click OK to continue.\n\n";
+                    alert(txt);
+                }               
+            } else if(editor.getOption("mode") === "javascript") {
+                try{ 
+                  var f = new Function(code);  //set the function
+                  f();  //execute the code
+                  cl(); //call function delete console
+                }catch(err){
+                  var txt="There was an error on this page.\n";
+                    txt+="Error description:   " + err.message + "\n";
+                    txt+="Click OK to continue.\n\n";
+                    alert(txt);
+                }            
+            }
+                    
+        }
+
+
+
+  
+
+---
+
+layout: false
+class: center, middle, inverse
+
+# 3. Mode Changer Java/Coffee
+---
+
+template: default
+layout: true
+class: middle
+
+### 3. Mode Changer Java/Coffee
+
+---
+
+
+CodeMirror use *modes* to recognize programming languages,
+  but it needs that the right "mode" is active. 
+
+
+
+## loadmode.js
+
+  CodeMirror method that try to load a different mode.
+  
+  Using 2 buttons for the different modes.
+
+    input id="coffeeScriptButton" type="button" value="CoffeeScript" 
+    onclick="coffeeMode();"
+
+    input id="javaScriptButton" type="button" value="JavaScript" 
+    style="display:none" onclick="javascriptMode();"
+
+    var csb = document.getElementById("coffeeScriptButton");
+    var jsb = document.getElementById("javaScriptButton");
+
+
+---
+
+# Javascript mode
+    
+    function javascriptMode() {
+      csb.style.display = "inline";   // show the cs button
+      jsb.style.display = "none";     // hide the js button
+      editor.setOption("mode", "javascript");  // set the mode 
+      CodeMirror.autoLoadMode(editor, "javascript"); // load the mode
+    }
+
+# Coffeescript mode
+
+    function coffeeMode() {
+      jsb.style.display = "inline";   // show the js mode button
+      csb.style.display = "none";     // hide the cs button
+      editor.setOption("mode", "coffeescript");  // set the mode 
+      CodeMirror.autoLoadMode(editor, "coffeescript"); // load the mode
+    }
+
+---
+layout: false
+class: center, middle, inverse
+
+# 4. Console's Style 
+---
+### 4. Console's Style 
+## The three files CSS used:
+* show-hint
+* console
+* codemirror
+
+
+
+### show-hint
+
+  * set the background, the placement and style of the hint
+
+
+### console
+  * set the console within the page, more precisely the positioning
+
+### codemirror
+  * set the background, size, basically the style of the console
+---
+### 4. Console's Style 
+## Codemirror.css
+
+<pre>
+ .CodeMirror {
+   /* Set height, width, borders, and global font properties here */
+   font-family: monospace;
+   font-size: 18px;
+   width: 95%;
+   height: 280px;
+}
+</pre>
+<br>
+<pre>
+/* DEFAULT THEME */
+
+.cm-s-default .cm-number {color:  #f00;font-size: 20px;font-weight:bold;}
+.cm-s-default .cm-def {color: #00f;font-size: 20px;font-weight:bold;}
+.cm-s-default .cm-property {color: #FFFF00 ;font-size: 20px;font-weight:bold;}
+.cm-s-default .cm-operator {color: blue;font-size: 20px;font-weight:bold;}
+.cm-s-default .cm-comment {color: gray;
+                          font-size: 12px;
+                          opacity: 0.5;
+                          }
+.cm-s-default .cm-string {color: green;  font-size: 20px;font-weight:bold;}
+</pre>
+---
+layout: false
+class: center, middle, inverse
+
+# 5. Autocompletion Hints
+---
+
+template: default
+layout: true
+class: middle
+
+### 5. Autocompletion Hints
+
+---
+# Activate the autocompletion
+
+CodeMirror provides a framework for showing [autocompletion hints](http://codemirror.net/addon/hint/show-hint.js).
+
+For using it we need to:
+
+    CodeMirror.commands.autocomplete = function(cm) { /*Call the function 
+                                                      for activate the hint*/
+    CodeMirror.showHint(cm, CodeMirror.javascriptHint); /*show a specific 
+                                                        hint for js/cs*/
+    };
+
+It's possible to set different extrakey for open the hint
+
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {    
+        extraKeys: {"Cmd-Space": "autocomplete"},  //MAC extrakey
+        extraKeys: {"Ctrl-Space": "autocomplete"}, //PC extrakey                           
+            });
+
+
+---
+layout: false
+class: center, middle, inverse
+
+# 6. Clear
+---
+
+### 6. Clear 
+
+###The clear function of the button
+
+    
+  
+    function cl_alert() {
+                //   save the code of the console
+                  var codeeliminate = editor.getValue(); 
+               
+                //  alert code that will be removed  
+                  alert("The Code that will be deleted is :  "+codeeliminate); 
+               
+                  editor.setValue("   // Write Here  ") //  reset console
+                }
+
+<br><br>
+###The clear function called from exec ()
+
+    function cl(){
+                        editor.setValue("   // Write Here  ")  //  reset console
+                          }
+
+---
+layout: false
+class: center, middle, inverse
+
+# 7. ModeChecker
+---
+
+### 7. ModeChecker
+
+<br> 
+###The function test that verifies the language mode of compilation
+
+     
+    function test() {
+                      //coffescript
+                      if (editor.getOption("mode") === "coffeescript"){
+                                                 alert("coffeescript");
+                      }
+                      
+                      //javascript
+                      if (editor.getOption("mode") === "javascript"){
+                                                 alert("javascript");
+                       }
+    }
+##### * As requested, the console is written above the current mode
+
+---
+layout: false
+class: center, middle, inverse
+
+# Thank you for your attention!
+
+<br>
+
+### Slideshow created by  [Matteo Riccardi]()
+
+      </pre>
+    <div id="slideshow"></div>
+    <script type="text/javascript">
+      var source = document.getElementById('source');
+      source.innerHTML = source.innerHTML.replace(/^\?.+\n/gm, '\n');
+    </script>
+  </body>
+</html>

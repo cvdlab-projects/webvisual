@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>WebVisual - Luigi Cristiano</title>
+    <script src="http://gnab.github.io/remark/downloads/remark-0.4.6.min.js" type="text/javascript">
+      {"highlightLanguage": "javascript"}
+    </script>
+    <style type="text/css" media="screen">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+      h1 { font-size: 3.5em; }
+      h2 { font-size: 3em; }
+      h3 { font-size: 1.6em; }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      pre {
+        border-left: 0.4em solid #d7d7d7;
+        padding: 1em !important;
+      }
+      code {
+        background: transparent !important;
+      }
+      a {
+        color: #F92672;
+        text-decoration: none;
+      }
+      .task {
+        float: right;
+        font-size: 0.9em;
+        padding-top: 0.6em;
+      }
+      .task a {
+        color: #080;
+        text-decoration: none;
+      }
+      .right {
+        float: right;
+        margin-left: 1em;
+      }
+      .pushdown {
+        margin-top: 12em;
+      }
+    </style>
+  </head>
+  <body>
+    <pre id="source">
+
+class: center, middle, inverse
+
+# WebVisual
+
+## Luigi Cristiano
+Matricola: 454863
+
+Roma Tre
+
+Corso di Informatica Biomedica 2012/2013
+
+
+prof. A. Paoluzzi.
+
+---
+class: left, middle
+# Individual work
+
+1. Implementation of a textual U-I Javascript/Coffeescript console
+2. Mode changer java/coffee
+3. Executors
+4. Autocompletion Hints
+
+---
+
+class: center, middle, inverse
+
+# 1. Implementation of a textual U-I Javascript/Coffeescript console
+---
+
+template: default
+layout: true
+class: middle
+
+### 1. Implementation of a textual U-I Javascript/Coffeescript console
+
+---
+# Instruments:
+* [CodeMirror API](http://codemirror.net/)
+* Javascript/Jquery libraries
+
+---
+
+## Implementing a console(1)
+
+### First attempt ( :< )
+
+  * Use some existing javascript console and do a reverse engineering
+
+Too much work. All the code was minified.
+
+
+### Second attempt (thanks to F.Spini)
+
+  * "Use the [CodeMirror API](http://codemirror.net/doc/manual.html#api)!"
+
+
+    CodeMirror(document.body);
+
+
+That method doesn't work efficiently with the rest of the page.
+
+---
+
+## Implementing a console(2)
+
+
+
+### Third and final attempt ( :D )
+
+    CodeMirror.fromTextArea(document.getElementById("Id"))
+
+
+Works great maximizing the customizability. 
+Use a pre-existent html TextArea, linked by the *Id*.
+
+---
+
+When we call the method *fromTextArea* we can set different options
+like the indentation or the layout of the console (the line number)
+
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                lineNumbers: true,
+                tabMode: "indent"                           
+    });
+
+
+---
+layout: false
+class: center, middle, inverse
+
+# 2. Mode Changer Java/Coffee
+---
+
+template: default
+layout: true
+class: middle
+
+### 2. Mode Changer Java/Coffee
+
+---
+
+# Codemirror modes
+
+CodeMirror use *modes* to recognize programming languages,
+  but it needs that the right "mode" is active. 
+
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                mode: "javascript",   //load the javascript mode                 
+            });
+
+
+---
+
+## The problem: 
+ 
+  You can't have 2 modes active at the same time.
+
+## The solution
+
+Loading the different modes, but how?
+
+---
+
+# loadmode.js
+
+  CodeMirror method that try to load a different mode.
+  
+  Using 2 buttons for the different modes.
+
+    input id="coffeeScriptButton" type="button" value="CoffeeScript" 
+    onclick="coffeeMode();"/
+
+    input id="javaScriptButton" type="button" value="JavaScript" 
+    style="display:none" onclick="javascriptMode();"/
+
+    var csb = document.getElementById("coffeeScriptButton");
+    var jsb = document.getElementById("javaScriptButton");
+
+
+---
+
+# Javascript mode
+    
+    function javascriptMode() {
+      csb.style.display = "inline";   //show the cs button
+      jsb.style.display = "none";     //hide the js button
+      editor.setOption("mode", "javascript");  //set the mode and...
+      CodeMirror.autoLoadMode(editor, "javascript"); //...load the mode
+    }
+---
+
+# Coffeescript mode
+
+    function coffeeMode() {
+      jsb.style.display = "inline";   //show the js mode button
+      csb.style.display = "none";     //hide the cs button
+      editor.setOption("mode", "coffeescript");  //set the mode and...
+      CodeMirror.autoLoadMode(editor, "coffeescript"); //...load the loadmode
+    }
+
+---
+
+layout: false
+class: center, middle, inverse
+
+# 3. Executors
+---
+
+template: default
+layout: true
+class: middle
+
+### 3. Executors
+
+---
+
+# Execute the code
+
+First of all we need to recognize if the code is 
+in javascript or coffeescript checking the current mode.
+Then we must use a different approach.
+
+  
+---
+
+# Exec function(1)
+
+    function exec() {
+
+    var code = editor.getValue(); //return the code in the console
+
+(...)
+
+---
+
+# Exec Function(2) javascript
+
+Execute the javascript code is relatively easy
+
+    //Check the current mode
+    if(editor.getOption("mode") === "javascript") {
+      var f = new Function(code); //set the function
+      f();  //execute the code
+    }
+
+---
+
+# Exec Function(3) coffeescript
+
+For execute the coffeescript we need first 
+to translate it to javascript.
+
+We use [coffee-script.js](https://github.com/jashkenas/coffee-script/blob/master/extras/coffee-script.js) to do this
+
+    //Check the current mode          
+    if(editor.getOption("mode") === "coffeescript") {
+      var js = CoffeeScript.compile(code) //Compile the code using coffee-script.js
+      var f = new Function(js); //set the funtion
+      f();  //execute the code
+
+
+### Note: Using and compile coffeescript code in a webpage is discouraged!
+               
+---
+
+layout: false
+class: center, middle, inverse
+
+# 4. Autocompletion Hints
+---
+
+template: default
+layout: true
+class: middle
+
+### 4. Autocompletion Hints
+
+---
+# Activate the autocompletion
+
+CodeMirror provides a framework for showing [autocompletion hints](http://codemirror.net/addon/hint/show-hint.js).
+
+For using it we need to:
+
+    CodeMirror.commands.autocomplete = function(cm) { /*Call the function 
+                                                      for activate the hint*/
+    CodeMirror.showHint(cm, CodeMirror.javascriptHint); /*show a specific 
+                                                        hint for js/cs*/
+    };
+
+It's possible to set different extrakey for open the hint
+
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {    
+        extraKeys: {"Cmd-Space": "autocomplete"},  //MAC extrakey
+        extraKeys: {"Ctrl-Space": "autocomplete"}, //PC extrakey                           
+            });
+
+
+---
+layout: false
+class: center, middle, inverse
+
+# Thank you for your attention!
+
+
+
+### Slideshow created with [remark](http://gnab.github.com/remark).
+
+      </pre>
+    <div id="slideshow"></div>
+    <script type="text/javascript">
+      var source = document.getElementById('source');
+      source.innerHTML = source.innerHTML.replace(/^\?.+\n/gm, '\n');
+    </script>
+  </body>
+</html>
