@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<head> 
+<title>Web</title>
+
+<link href="styles/Web-index/web_index.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript"  src="js/web_index/DrawCluster.js"></script>
+
+</head> 
+<body style="overflow : hidden" onLoad="retrieveCluster()">
+<!-- header web-index -->
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a>Cluster's point</a></h1>
+		</div>
+	</div>
+</div>
+
+<!-- fine header -->
+
+<!-- inizio context -->
+
+ 
+    <!-- plasm -->
+
+<div id="page-wrapper">
+			<script>
+        var url = location.search.replace(/%20/g," ");
+        alert(url)
+        var type = url.split("&")[1].split("=")[1];
+        var description = url.split("&")[2].split("=")[1];
+        var name = url.split("&")[3].split("=")[1];
+        var id = url.split("&")[0].split("=")[1];
+        document.write("<div style='height : 10px; margin-top:5px'><p align='center'><font size="+3+" >View cluster's point with Type: "+type+"; id: "+id+"; name: "+name+"; description: "+description+"</font></p></div>");
+      </script>
+			
+				<div id="plasm" ></div>
+
+
+
+
+<!-- fine context -->
+
+<!-- footer start-->
+
+
+<!-- footer end-->
+
+
+<!-- script plasm -->
+<script src="support/jquery.js"></script>
+<script src="support/mustache.js"></script>
+<script src="support/numeric.js"></script>
+<script src="support/director.js"></script>
+<script src="support/three.js"></script>
+<script src="support/three-detector.js"></script>
+<script src="support/three-frame.js"></script>
+<script src="support/three-stats.js"></script>
+<script src="support/three-trackball.js"></script>
+<script src="node_modules/simplexn.js/lib/simplexn.js"></script>
+<script src="node_modules/f.js/lib/f.js"></script> 
+<script src="lib/plasm.js"></script>
+<script src="lib/plasm-fun.js"></script>
+<script src="lib/plasm-env.js"></script>
+
+  <script>
+    var p;
+    $(function () {
+      console.log('Starting PLaSM for Web-Index...');
+      p = new Plasm('plasm', 'plasm-inspector');
+      fun.PLASM(p);
+    });
+  </script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30496335-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = 'http://www.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+ </body>
+</html>

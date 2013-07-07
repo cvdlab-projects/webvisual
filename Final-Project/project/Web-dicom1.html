@@ -1,0 +1,417 @@
+<!DOCTYPE html> 
+
+<head> 
+	<title>Web</title>
+</head> 
+<body>
+
+	<link href="styles/web-dicom/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="styles/web-dicom/custom.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="styles/web-dicom/liquidcarousel.css" rel="stylesheet" type="text/css" media="all">
+
+	<!-- script plasm -->
+	<script src="support/jquery.js"></script>
+	<script src="support/mustache.js"></script>
+	<script src="support/numeric.js"></script>
+	<script src="support/director.js"></script>
+	<script src="support/three.js"></script>
+	<script src="support/three-detector.js"></script>
+	<script src="support/three-frame.js"></script>
+	<script src="support/three-stats.js"></script>
+	<script src="support/three-trackball.js"></script>
+	<script src="node_modules/simplexn.js/lib/simplexn.js"></script>
+	<script src="node_modules/f.js/lib/f.js"></script> 
+	<script src="lib/plasm.js"></script>
+	<script src="lib/plasm-fun.js"></script>
+	<script src="lib/plasm-env.js"></script>
+
+
+
+	<script>
+	var p;
+	$(function () {
+		console.log('Starting PLaSM...');
+		p = new Plasm('plasm', 'plasm-inspector');
+		fun.PLASM(p);
+	});
+	</script>
+
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-30496335-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = 'http://www.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+
+
+	<!--console-->
+
+
+	<link href="styles/web-dicom/cssDicomPerValerio.css" rel="stylesheet" type="text/css" media="all" />
+
+	<script src="js/console/codemirror.js"></script>
+	<script src="js/console/console_script.js"></script>
+
+	<!--Javascript and coffeescript modes-->
+	<script src="js/console/javascript.js"></script>
+	<script src="js/console/coffeescript.js"></script>
+	<script src="js/console/loadmode.js"></script>
+
+	<!--Hint-->
+	<script src="js/console/show-hint.js"></script>
+	<script src="js/console/javascript-hint.js"></script>
+
+	<link rel="stylesheet" href="styles/console/codemirror.css">
+	<link rel="stylesheet" href="styles/console/console.css">
+	<link rel="stylesheet" href="styles/console/show-hint.css">
+    <script type="text/javascript" src="js/jsDicom/webDicom-env.js"></script>
+
+	<!--fine console-->
+
+
+
+	
+
+
+	<!-- fine plasm -->
+	<script type="text/javascript" src="js/jsDicom/myJS/bootstrap.js"></script>
+	<!-- <script type="text/javascript" src="myJS/cubo.js"></script> -->
+	<script type="text/javascript" src="js/jsDicom/myJS/jquery.liquidcarousel.js"></script>
+
+
+
+	<script type="text/javascript">
+	var img = new Image();
+	img.crossOrigin = '';
+	img.onload = function() {
+		var $ = function(id) { return document.getElementById(id); };
+		$('blkS').oninput = function() { $('BlockSize').innerHTML = this.value; };
+		$('blkS').oninput();
+		mosaicImage(img, 1);
+	};
+	
+	//onChange function
+	function changed(){
+		var blockSize = document.getElementById('blkS').value;
+		mosaicImage(img, parseInt(blockSize));
+	};
+	img.src = $('#original-image').attr('src');
+
+	
+
+
+
+	</script>
+
+
+
+
+	<!-- header -->
+
+	<div class="navbar">
+		<div class="navbar-inner">
+			<a class="brand" href="#">Web Dicom</a>
+			<ul class="nav">
+				<li class="active"><a href="index.html"><b>Home</b></a></li>
+				<li><a id="webdicom-link-about" href="#"><b>About</b></a></li>
+				<li><a id="webdicom-link-contact" href="#"><b>Contact</b></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- fine header -->
+
+	<!-- inizio context -->
+	<div class="container-fluid">
+		<div class="row-fluid">
+
+<div id="webdicom-container-about-wrapper">
+        <div id="webdicom-container-about" class="webdicom-container">
+            <div>
+                <div id="webdicom-logo"><span>Web-Index</span></div>
+            </div>
+            <div id="webdicom-icon-close" class="icon-close"></div>
+            <div id="webdicom-copyright">
+                <p> Web-index is a web application created by a group of student of University Roma Tre</p>
+                <p> Student Group :</p><ul type="disc"><li>Andrea Barbadoro</li><li>Andrea Patrizia</li><li>Francesco Maglia</li>
+                <li>Ilario Maiolo</li><li>Matteo Cannaviccio</li><li>Sara Vagnarelli</li></ul></p></br>
+                <p> Project: </p><ul type="disc"><li>Analysis of major approaches to spatial indexing of large point data-sets</li>
+                    <li>JSON paging of large geometric datasets using MongoDB</li>
+                    <li>implementation of <a href="http://en.wikipedia.org/wiki/Hilbert_curve">Hilbert</a> and <a href="http://en.wikipedia.org/wiki/Z-order_(curve" >Lebesgue curve or z-order</a> curve and indices</li>
+                    <li>Strassen multiplication of matrices with Z-order</li></ul></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="webdicom-container-about-wrapper">
+        <div id="webdicom-container-contact" class="webdicom-container">
+            <div>
+                <div id="webdicom-logo"><span>Web-Index contact</span></div>
+            </div>
+            <div id="webdicom-icon-contact-close" class="icon-contact-close"></div>
+            <div id="webdicom-copyright">
+                <p> Web page designer:</p></br><p>Marco Barbieri email : marco90barbieri@gmail.com</p></br>
+                <p> Function developers:</p></br><p> Altre email</p></br>
+            </div>
+        </div>
+    </div>
+			<div class="span4">
+				<br>
+
+
+
+				<br>
+				<p>
+					<br>
+
+
+					<input type="file" multiple id="input"></input>		
+				</div>
+
+				<div class="span4">
+				</div>
+				<div class="span4">
+				</div>
+
+			</div>
+
+			<br>
+			<div class="row-fluid">
+				<div class="span6">
+					<blockquote >
+						<p ><strong>Original Image</strong></p>
+					</blockquote>
+					<p></div>
+						<div class="span6">
+							<blockquote>
+								<p ><strong>Grayscale filter</strong></p>
+							</blockquote>
+							<p></div>
+							</div>
+							<div class="row-fluid">
+
+
+
+								<div class="span5 preview img-rounded" id="original">
+									<!-- <td align="center" style="width: 50%">-->
+									<!-- <img src="images/brain/IM-0001-0014.png" onLoad="changedSegm()"> -->
+									<canvas id="canvasOriginalImage" width="550" height="550"></canvas>
+									<!-- 	</td align="center" style="width: 50%">-->
+								</div>
+								<div class="span1"></div>
+
+								<div class="span5 preview img-rounded" id="gray">
+									<canvas id="canvas_gray" width="550" height="550" style="padding-top: 90px"></canvas>
+
+									
+
+
+								</div>
+
+							</div>
+
+
+
+
+							<div class="row-fluid">
+								<br>
+								<blockquote>
+									<p><strong>Scroll to show all images</strong></p>
+								</blockquote>
+
+
+								<div id="container-liquid">
+									<div id="liquid" class="liquid">
+										<span id= "prev" class="previous"></span>
+										<div class="wrapper">
+											<ul class="image-scroll">
+
+											</ul>
+
+
+										</div>
+										<span id="next" class="next"></span>
+									</div>
+								</div>
+
+							</div>
+
+							<br>
+							<hr></hr>
+							<br>
+
+
+
+							<div class="row-fluid">
+								<div class="span5">
+
+									<blockquote style="display: inline;">
+										<p style="display: inherit;"><strong>Thresholding Segmentation</strong></p>
+									</blockquote>
+									
+
+									<p>
+										<br>
+
+										MIN: <input type="range" id="mini"  value="150" min="0" max="765" step="1" / style="width: 100%;" onChange="changedSegm()">
+										<div id="minimo">&nbsp;</div><br><br>
+										MAX: <input type="range" id="maxi"  value="200" min="0" max="765" step="1" / style="width: 100%;" onChange="changedSegm()">
+										<div id="massimo">&nbsp;</div><br>
+										<p class="text-center">
+											
+										</div>
+
+<div class="span1"></div>
+
+										<div class="span5">
+											<blockquote style="display: inline;">
+												<p style="display: inherit;"><strong>Block Decomposition</strong></p>
+											</blockquote>
+
+											<p>
+												<br>					
+												Block Size: <input type="range" id="blkS"  value="1" min="1" max="10" step="1" / style="width: 100%;" onChange="changedBlk()">
+												<div id="BlockSize">&nbsp;</div>
+
+												<br>
+												<p class="text-center">
+
+
+												</div>
+											</div>
+
+
+											<div class="row-fluid">
+
+												<div class="span5 preview img-rounded" id="divCanvas_segm">
+
+
+													<canvas id="canvas_segm" width="550" height="550"></canvas> 
+
+												</div><div class="span1"></div>
+
+
+												<div class="span5 preview img-rounded" id ="block">
+													<canvas id="canvas_blockDecomp" width="550" height="550"></canvas>
+
+												</div>
+											</div>
+
+											<br>
+											<hr></hr>
+											<br>
+											<script language=>
+											function on() {
+												$("body").css("overflow","hidden");
+											}
+
+											function out(){
+												$("body").css("overflow","auto");
+												$("#plasm").css("border","solid");
+												$("#plasm").css("border-color","transparent");
+												
+											}
+
+											</script>
+											<!-- canvas plasm -->
+											<blockquote style="display: inline;">
+												<p style="display: inherit;"><strong>3D Model</strong></p>
+											</blockquote>
+											<p class="text-center"><button class="btn btn-large" onClick="clicked3D()">Render 3D Model</button></p>
+
+											<p></p>
+
+											<script language=>
+
+											function onE() {
+												$("#plasm").css("border","solid");
+												$("#plasm").css("border-color","#3A5896");
+
+											}
+
+
+											</script>
+
+
+											<div class="row-fluid">
+												<div class="span2"></div>
+												<div id="wrapper">
+													<div id="page-wrapper">
+														<div class="span10">
+															<div id="page">
+																<div  onMouseOver="onE()" id="plasm" width="650" height="450" onclick="on()" onMouseOut="out()"></div>
+															</div>
+														</div>
+														<div class="span1"></div>
+
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- fine context -->
+										<p class="text-center">Copyright Eleonora Cappelli </p>
+
+										<!-- footer -->
+										<footer class="footer">
+											<div style="float:left">
+												<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();" ><label id="label-console" for="" style="display:inline;font-size:1.3em;color:#FFF;font-variant: small-caps"></label>
+											</div>
+											<div id="menu">
+												<ul class="nav">
+													<li><a href="Web-lar.html">Web-LAR</a></li>
+													<li><a href="Web-index.html">Web-Index</a></li>
+													<li><a href="Web-dicom.html">Back</a></li>
+
+												</ul>
+											</div>
+											<div id="consl" style="display:none; float: left;">  
+												<form name="form" id="form"><textarea id="code" name="code" >
+													//Write Here
+												</textarea></form>
+
+												<input id="exec" type="button" value="Exec" onclick="exec();"/>
+												<input id="coffeeScriptButton" type="button" value="CoffeeScript" onclick="coffeeMode();"/>
+												<input id="javaScriptButton" type="button" value="JavaScript" style="display:none" onclick="javascriptMode();">
+													  <input id="clear" type="button" value="Clear" onclick="cl()"/>
+												<input id="verify" type="button" value="Verify" onclick="test();"/>
+											</div>
+
+
+
+											<script>
+											/*Testing var*/
+											var csb = document.getElementById("coffeeScriptButton");
+											var jsb = document.getElementById("javaScriptButton");
+
+											/*Loading CodeMirror on existing textArea*/
+
+											var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+												mode: "javascript",
+												lineNumbers: true,
+                extraKeys: {"Cmd-Space": "autocomplete"},   //extrakey for autocomplete
+                tabMode: "indent"                           
+              });
+
+
+
+											</script>
+
+											<div id="footer" class="container"></div>
+										</footer>
+									</body>
+									<!-- dicom -->
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/html5slider.js"></script>
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/mosaicImage.js"></script>
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/segmentation.js"></script>
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/imagesLoader.js"></script>
+									<script src="js/jsDicom/myJS/jsDicomValerioRoberta/3D.js"></script>
+
+									</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html> 
+
+<head> 
+	<title>Web</title>
+	<link href="styles/Web-index/web_index.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="styles/Web-index/menu.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript"  src = "js/jquery-1.9.1.js"></script>
+	<script type="text/javascript"  src="js/web_index/find.js"></script>
+	<script type="text/javascript"  src="js/web_index/createTree.js"></script>
+	<script type="text/javascript"  src="js/web_index/raphael-min.js"></script>
+	<script type="text/javascript"  src="js/web_index/createLineChildren.js"></script>
+	<script type="text/javascript"  src="js/web_index/createLineRoot.js"></script>
+	<script type="text/javascript"  src="js/web_index/retrieveAll.js"></script>
+	<script src="js/web_index/webIndex-env.js"></script>	
+	<link rel="stylesheet" href="styles/console/codemirror.css">
+	<link rel="stylesheet" href="styles/console/console.css">
+	<link rel="stylesheet" href="styles/console/show-hint.css">
+	<script src="js/console/codemirror.js"></script>
+	<script src="js/console/console_script.js"></script>
+
+	<!--Javascript and coffeescript modes-->
+	<script src="js/console/javascript.js"></script>
+	<script src="js/console/coffeescript.js"></script>
+	<script src="js/console/loadmode.js"></script>
+
+	<!--Hint-->
+	<script src="js/console/show-hint.js"></script>
+	<script src="js/console/javascript-hint.js"></script>
+
+</head> 
+<body id="webindex">
+<!-- header web-index -->
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a>Web - Index</a></h1>
+		</div>
+		<div id="drop-menu">
+			<ul id="menu-drop">
+
+
+
+				<li><a  href="#">Function</a>
+
+					<ul>
+						<li><a id="buttonInputModel" onclick="javascript:retriveJsonDocument()" >View Model</a>
+							<input id="inputModelId" value="insert model id" type="text" onfocus="this.value=(this.value=='insert model id')?'':this.value" onblur="this.value=(this.value=='')?'insert model id':this.value"></li>
+							<li><a onclick="allModel()">Retrieve all</a></li>
+							<li><a onclick="clearDivResult()">Clear</a></li>	
+
+						</ul>
+					</li>
+
+					<li><a onclick="webdicom()" style="cursor:pointer">Web-dicom</a></li>
+					<li><a onclick="weblar()" style="cursor:pointer">Web-lar</a></li>
+					<li><a id="webindex-link-contact" href="#">Contact</a></li>
+					<li><a id="webindex-link-about" href="#">About</a></li>
+					<li><a href="index.html?#home"  title="home">Home</a></li>
+
+				</ul>
+			
+		</div>
+	</ul>
+	</div>
+</div>
+
+<!-- fine header -->
+
+<!-- inizio context -->
+<div id="page-wrapper">
+	<div id="page">
+		<div id="printResult">
+
+		</div>
+	</div>
+	<div id="webindex-container-about-wrapper">
+		<div id="webindex-container-about" class="webindex-container">
+			<div>
+				<div id="webindex-logo"><span>Web-Index</span></div>
+			</div>
+			<div id="webindex-icon-close" class="icon-close"></div>
+			<div id="webindex-copyright">
+				<p> Web-index is a web application created by a group of student of University Roma Tre</p>
+				<p> Student Group :</p><ul type="disc"><li>Andrea Barbadoro</li><li>Andrea Patrizia</li><li>Francesco Maglia</li>
+				<li>Ilario Maiolo</li><li>Matteo Cannaviccio</li><li>Sara Vagnarelli</li></ul></p></br>
+				<p> Project: </p><ul type="disc"><li>Analysis of major approaches to spatial indexing of large point data-sets</li>
+					<li>JSON paging of large geometric datasets using MongoDB</li>
+					<li>implementation of <a href="http://en.wikipedia.org/wiki/Hilbert_curve">Hilbert</a> and <a href="http://en.wikipedia.org/wiki/Z-order_(curve" >Lebesgue curve or z-order</a> curve and indices</li>
+					<li>Strassen multiplication of matrices with Z-order</li></ul></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="webindex-container-about-wrapper">
+		<div id="webindex-container-contact" class="webindex-container">
+			<div>
+				<div id="webindex-logo"><span>Web-Index contact</span></div>
+			</div>
+			<div id="webindex-icon-contact-close" class="icon-contact-close"></div>
+			<div id="webindex-copyright">
+				<p> Web page designer:<ul><li >Marco Barbieri email : <a href="mailto:marco90barbieri@gmail.com">marco90barbieri@gmail.com</a></li></ul></p>
+				
+				<p>Function developers (web-index):<ul> 
+					<li>Andrea Barbadoro email: <a href="mailto:andij.cr@gmail.com">andij.cr@gmail.com</a></li>
+					<li>Ilario Maiolo email: <a href="mailto:ilariore88@gmail.com">ilariore88@gmail.com</a></li>
+					<li>Francesco Maglia email:<a href="mailto:kikz.maglia@gmail.com"> kikz.maglia@gmail.com</a></li>
+					<li>Andrea Patrizio email: <a href="mailto:andrea.patrizio@gmail.com">andrea.patrizio@gmail.com</a></li>
+					<li>Claudio Pisanu email: <a href="mailto:newsid88@gmail.com">newsid88@gmail.com</a></li>
+					<li>Matteo Cannaviccio email:<a href="mailto:mcannaviccio@gmail.com"> mcannaviccio@gmail.com</a></li>
+					<li>Sara Vagnarelli email: <a href="mailto:saravagnarelli@yahoo.it">saravagnarelli@yahoo.it</a></li>
+				</ul></p>
+			</div>
+		</div>
+	</div>
+
+<style>ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+
+
+#menu_container {
+	width: 25%;
+	margin: 10px;
+	float: left;
+	height: 99%;
+}
+
+#image_container {
+	width: 98%;
+	float: left;
+	height: 97%;
+	border: solid 1px #CCC;
+	overflow: scroll;
+}
+
+#image_container {
+	width: 98%;
+	float: left;
+	height: 97%;
+	border: solid 1px #CCC;
+	overflow: scroll;
+}
+
+#menu_button {
+	width: 98%;
+	margin: 10px;
+	height: 50%;
+	overflow: scroll;
+}
+
+#menu_button li button, #button_index{
+	height: 32px;
+  	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	width: 150px;
+  	background-color: #3A5896;
+  	border-radius: 10px;
+  	color: #FFF;
+
+	}	
+	
+#menu_button li button:link, #menu_button li button:visited,#button_index:link,#button_index:visited{
+	color: #666;
+	display: block;
+	padding: 10px 0 0 35px;
+	
+
+	}
+	
+#menu_button li button:hover, #button_index:hover{
+
+	opacity: .50;
+	cursor: pointer;
+	}
+	</style>
+	<div id="menu_container">
+
+		
+		<div id="image_container">
+			<div id="preview"></div>
+			<!-- idea fare vedere piu immagini di alberi con la possibilità di scegliere-->
+		</div>
+
+	</div>
+</div>
+
+</div>
+
+
+<!-- fine context -->
+<div id="console-index" style="float:left;bottom:0;position:fixed" ><!-- position:fixed before click show console then the property relative
+-->
+	<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();"><label id="label-console" for="" style="font-size:1.3em;font-variant: small-caps"></label>
+</div>
+
+<div id="consl" style="display:none;">  
+	
+<form name="form" id="form"><textarea id="code" name="code">
+		//Write Here
+	</textarea></form>
+
+			<input id="exec" type="button" value="Exec" onclick="exec();"/>
+			<input id="coffeeScriptButton" type="button" value="CoffeeScript" onclick="coffeeMode();"/>
+			<input id="javaScriptButton" type="button" value="JavaScript" style="display:none" onclick="javascriptMode();" />
+				  <input id="clear" type="button" value="Clear" onclick="cl()"/>
+			<input id="verify" type="button" value="ModeChecker" onclick="test();"/>
+</div>
+
+
+ 
+<script>
+/*Testing var*/
+var csb = document.getElementById("coffeeScriptButton");
+var jsb = document.getElementById("javaScriptButton");
+
+/*Loading CodeMirror on existing textArea*/
+
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+	mode: "javascript",
+	lineNumbers: true,
+                extraKeys: {"Cmd-Space": "autocomplete"},   //extrakey for autocomplete
+                tabMode: "indent"                           
+            });
+
+</script>
+
+
+ </body>
+</html>
